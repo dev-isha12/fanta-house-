@@ -1,7 +1,29 @@
 import fanta1 from "../assets/fanta1.png"
 import fanta2 from "../assets/fanta2.png"
 import fanta3 from "../assets/fanta3.png"
+import { delay, motion } from "framer-motion"
 
+
+export const fadeUp = () => {
+    return{
+        hidden: {
+            opacity: 0,
+            y: 100,
+
+            
+        },
+        show : {
+            opacity:1,
+            y:0,
+            transition: {
+                duration: 0.5,
+                delay: delay,
+            }
+
+        },
+
+    }
+}
 const ProductData =[
     {
         id: 1,
@@ -49,9 +71,9 @@ const Product = () => {
                             <h1 className="text-xl font-bold text-center">{item.title}</h1>
                             <p className="text-sm text-center text-gray-600 mt-2">{item.desc}</p>
                             
-                            <button className="mt-5 border border-orange-500 text-orange-500 px-6 py-2 rounded-md hover:bg-orange-500 hover:text-white transition-colors">
-                                Buy Now
-                            </button> 
+                       <button className="rounded-full border-2 border-orange-500 px-6 py-3 font-semibold text-orange-500 transition-all duration-300 hover:bg-orange-500 hover:text-white hover:scale-105 mt-4">
+  Buy Now
+</button>
                         </div>
                     ))}
                 </div>
